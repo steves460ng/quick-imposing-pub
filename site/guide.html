@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header class="site-header">
@@ -36,6 +36,7 @@
         <p>이 페이지에서</p>
         <ol>
           <li><a href="#start">시작하기</a></li>
+          <li><a href="#base">베이스란</a></li>
           <li><a href="#template">1. 템플릿 만들기</a></li>
           <li><a href="#work">2. 작업하기</a></li>
           <li><a href="#save">저장과 덮어쓰기</a></li>
@@ -63,6 +64,86 @@
           </div>
         </section>
 
+        <section id="base">
+          <h2>베이스란</h2>
+          <p><strong>베이스</strong>는 카드를 앉힐 <strong>판의 바탕</strong>이 되는 PDF입니다. 인쇄소에서 판을 짤 때 늘 쓰는 바탕 판(재단선, 맞춤표, 컬러바 같은 마크가 들어 있고 카드 자리는 비어 있는 판)을 PDF 한 장으로 저장한 것이라고 생각하면 됩니다.</p>
+          <p>퀵 임포징은 이 베이스 위에 카드를 정해진 칸에 올려 판 PDF를 만듭니다. 그래서 <strong>결과 PDF의 크기는 베이스의 크기와 같고</strong>, 재단선이나 마크도 프로그램이 새로 그리지 않고 <strong>베이스에 있는 것을 그대로</strong> 씁니다.</p>
+
+          <figure class="base-fig">
+            <div class="base-sheet" role="img" aria-label="베이스 예시. 판 가장자리에 재단선, 맞춤표, 컬러바, 판 이름과 면 라벨이 있고, 가운데 카드가 들어갈 자리는 비어 있다.">
+              <span class="bm crop tl"></span><span class="bm crop tr"></span><span class="bm crop bl"></span><span class="bm crop br"></span>
+              <span class="bm reg" style="left: 50%; top: 3.2%"></span>
+              <span class="bm reg" style="left: 50%; bottom: 3.2%; top: auto"></span>
+              <span class="bm label-top">A 하리</span>
+              <span class="bm label-side">전면</span>
+              <span class="bm colorbar"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="bm area">
+                <span class="area-grid">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </span>
+                <span class="area-note">카드 자리<br>(비어 있음)</span>
+              </span>
+              <span class="num n1">1</span><span class="num n2">2</span><span class="num n3">3</span><span class="num n4">4</span><span class="num n5">5</span>
+            </div>
+            <figcaption>
+              <p class="base-fig-title">베이스에 들어 있는 것 (예)</p>
+              <ol class="base-legend">
+                <li><strong>재단선 · 알마크</strong> 재단할 위치를 알려 주는 선과 표시</li>
+                <li><strong>맞춤표</strong> 인쇄할 때 색판을 맞추는 표시(레지스트레이션 마크)</li>
+                <li><strong>판 이름 · 면 라벨</strong> 어느 판, 어느 면(전면 · 후면)인지 적은 고정 글자</li>
+                <li><strong>컬러바</strong> 인쇄 색을 확인하는 색 띠</li>
+                <li><strong>카드 자리</strong> 비워 둡니다. 여기에 셀 배열대로 카드가 들어갑니다. 점선 칸은 설명을 위한 것이고 실제 베이스에는 없어도 됩니다</li>
+              </ol>
+            </figcaption>
+          </figure>
+
+          <h3>베이스 준비하기</h3>
+          <p>지금 쓰고 있는 판 파일(쿽, 일러스트레이터 등)에서 시작하면 됩니다.</p>
+          <ol>
+            <li><strong>카드와 작업마다 바뀌는 글자를 지웁니다.</strong> 카드 디자인, 날짜, 제품명, 작업팀처럼 작업할 때마다 달라지는 것은 빼고, 매번 같은 마크와 라벨만 남깁니다. 바뀌는 글자는 템플릿의 <a href="#template">텍스트 항목</a>으로 자리를 만들어 작업할 때 입력합니다.</li>
+            <li><strong>판 크기 그대로 1페이지 PDF로 저장합니다.</strong> PDF 페이지 크기가 곧 판 크기입니다(예: 300 × 450 mm).</li>
+            <li><strong>CMYK로 저장합니다.</strong> 카드와 마찬가지로 인쇄용 CMYK PDF여야 합니다.</li>
+            <li><strong>페이지 회전을 걸지 않습니다.</strong> PDF에 페이지 회전이 설정되어 있으면 베이스로 고를 수 없습니다. 판 방향 그대로 저장합니다.</li>
+            <li><strong>카드 자리는 비워 둡니다.</strong> 흰 상자나 배경색도 두지 않습니다. 베이스는 카드 위에 그려지므로(아래 "오버베이스"), 카드 자리에 무엇이 있으면 카드를 가리거나 카드 위에 찍힙니다.</li>
+          </ol>
+          <p>앞면과 뒷면은 마크 위치가 다르므로 <strong>베이스도 따로</strong> 준비해 템플릿을 하나씩 만듭니다. 뒷면 템플릿은 앞면 템플릿을 복제한 뒤 베이스만 바꾸면 편합니다.</p>
+
+          <h3>베이스와 셀 위치</h3>
+          <p>셀 배열의 위치(mm)는 <strong>베이스의 왼쪽 위 모서리를 (0, 0)</strong>으로 잽니다. 오른쪽으로 갈수록 X, 아래로 갈수록 Y가 커집니다. 판의 마크와 겹치지 않도록 카드 자리 안에 셀을 놓습니다. 프로그램은 셀이 마크에 걸치는지 따로 검사하지 않으니 편집기 미리보기로 확인해 주세요. 셀이 서로 겹치거나 판 밖으로 나가면 노란 안내가 나옵니다.</p>
+
+          <h3 id="overbase">오버베이스: 베이스를 카드 위에 그리기</h3>
+          <p>판 PDF는 여러 장을 겹쳐 놓은 것과 같습니다. <strong>오버베이스</strong>는 베이스를 카드 <strong>위</strong>에 올릴지 정하는 설정이며, 기본으로 켜져 있습니다. 쿽에서 판을 짤 때와 같은 순서입니다.</p>
+          <div class="stack-compare">
+            <div class="stack-col">
+              <p class="stack-title">켜짐 (기본)</p>
+              <ol class="stack" aria-label="오버베이스를 켰을 때 위에서부터 텍스트 항목, 베이스, 카드 순서">
+                <li class="s-text">텍스트 항목</li>
+                <li class="s-base">베이스</li>
+                <li class="s-card">카드</li>
+              </ol>
+              <p>카드 가장자리에 걸친 알마크 · 재단선 · 열 사이 흰 띠가 카드 위에 보입니다. 베이스의 흰 면은 카드를 가립니다.</p>
+            </div>
+            <div class="stack-col">
+              <p class="stack-title">꺼짐</p>
+              <ol class="stack" aria-label="오버베이스를 껐을 때 위에서부터 텍스트 항목, 카드, 베이스 순서">
+                <li class="s-text">텍스트 항목</li>
+                <li class="s-card">카드</li>
+                <li class="s-base">베이스</li>
+              </ol>
+              <p>카드가 베이스를 덮습니다. 카드에 걸친 마크는 카드에 가려 보이지 않습니다.</p>
+            </div>
+          </div>
+          <p>판에 넣는 글자(텍스트 항목)는 어느 쪽이든 맨 위에 찍힙니다.</p>
+
+          <h3>알아 둘 점</h3>
+          <ul>
+            <li>베이스를 고르면 템플릿 안에 <strong>사본</strong>이 저장됩니다. 원본 파일을 옮기거나 지워도 템플릿은 그대로 쓸 수 있습니다. 반대로 원본 베이스를 고쳤다면 편집기에서 <strong>베이스 PDF 선택</strong>으로 다시 골라야 템플릿에 반영됩니다.</li>
+            <li>베이스의 내용(색, 마크, 글자)은 바꾸지 않고 그대로 결과 PDF에 들어갑니다.</li>
+            <li>여러 PC에서 함께 쓰면 모든 PC를 같은 버전으로 맞춰 주세요. 오버베이스는 0.13.0부터 있는 설정이라, 그보다 오래된 버전은 같은 템플릿으로도 카드가 베이스를 덮습니다.</li>
+          </ul>
+        </section>
+
         <section id="template">
           <h2>1. 템플릿 만들기</h2>
           <p>템플릿 편집기에서 합니다. 아래 표의 예는 화면 속 "명함-전면" 템플릿의 값입니다.</p>
@@ -72,13 +153,13 @@
           </figure>
           <ol>
             <li><strong>이름</strong>을 적습니다. 예: <code>명함-전면</code>. 저장한 뒤에는 바꿀 수 없습니다.</li>
-            <li><strong>베이스 PDF 선택</strong>을 눌러 빈 베이스(작업마다 바뀌는 글자를 지운 1페이지 PDF)를 고릅니다. 베이스는 템플릿 폴더로 복사되므로 원본을 옮기거나 지워도 됩니다.
+            <li><strong>베이스 PDF 선택</strong>을 눌러 미리 준비한 베이스를 고릅니다. 무엇을 베이스로 쓰는지는 <a href="#base">베이스란</a>을 먼저 읽어 주세요.
               <ul>
-                <li><strong>오버베이스</strong>(기본으로 켜짐): 베이스를 카드 위에 그립니다. 재단선처럼 카드에 걸친 베이스 요소가 보이고, 베이스의 흰 면도 카드를 가립니다. 끄면 카드가 베이스를 덮습니다.</li>
+                <li><strong>오버베이스</strong>는 그대로 켜 둡니다(기본). 베이스를 카드 위에 그려 마크가 보이게 합니다. 자세한 차이는 <a href="#overbase">오버베이스</a>를 보세요.</li>
               </ul>
             </li>
             <li>작업자에게 알려 줄 내용(용지, 재단 방향, 주의 사항 등)이 있으면 <strong>메모</strong>에 적습니다. 메모는 작업 프로그램에서 보이고, PDF에는 들어가지 않습니다.</li>
-            <li><strong>셀 배열</strong>을 입력합니다. 단위는 mm이고, 판 왼쪽 위가 (0, 0)입니다.</li>
+            <li><strong>셀 배열</strong>을 입력합니다. 단위는 mm이고, 베이스(판)의 왼쪽 위가 (0, 0)입니다.</li>
           </ol>
           <div class="table-box">
             <table>
