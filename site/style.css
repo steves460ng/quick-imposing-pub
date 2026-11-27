@@ -701,22 +701,6 @@ h2.h-gap {
   background: linear-gradient(#16181d, #16181d) center / 1px 100% no-repeat, linear-gradient(#16181d, #16181d) center / 100% 1px no-repeat;
 }
 
-.base-sheet .label-top {
-  left: 14%;
-  top: 3%;
-  font-size: 9px;
-  line-height: 1;
-}
-
-.base-sheet .label-side {
-  left: 3%;
-  top: 50%;
-  transform: translateY(-50%);
-  writing-mode: vertical-rl;
-  font-size: 9px;
-  line-height: 1;
-}
-
 .base-sheet .colorbar {
   left: 14%;
   bottom: 3.2%;
@@ -783,9 +767,8 @@ h2.h-gap {
 
 .base-sheet .n1 { left: -9px; top: 1%; }
 .base-sheet .n2 { left: 50%; top: 5.5%; margin-left: 4px; }
-.base-sheet .n3 { left: 30%; top: 0.5%; }
-.base-sheet .n4 { left: 39%; bottom: 1.5%; }
-.base-sheet .n5 { right: 14%; top: 45%; }
+.base-sheet .n3 { left: 39%; bottom: 1.5%; }
+.base-sheet .n4 { right: 14%; top: 45%; }
 
 .base-fig figcaption {
   flex: 1 1 18rem;
@@ -809,6 +792,28 @@ h2.h-gap {
 .base-legend li::marker {
   color: var(--accent);
   font-weight: 700;
+}
+
+.note-box {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.doc .note-box p {
+  margin: 0;
+  color: var(--fg-2);
+}
+
+.doc .note-box p + p {
+  margin-top: 0.4rem;
+}
+
+.doc .note-box strong {
+  color: var(--fg);
+  font-size: 1.05rem;
 }
 
 .stack-compare {
