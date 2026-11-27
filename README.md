@@ -1,6 +1,12 @@
 # quick-imposing-pub
 
-quick-imposing의 GitHub Pages 사이트입니다.
+명함 같은 카드 PDF를 인쇄용 판 PDF의 정해진 칸에 배치하는 Windows 프로그램 **quick-imposing**의 소개·배포 저장소입니다.
+
+- 내려받기: [최신판](https://github.com/steves460ng/quick-imposing-pub/releases/latest) · [지난 버전과 패치 소식](https://github.com/steves460ng/quick-imposing-pub/releases)
+- 버그 제보·개선 요구: [Issues](https://github.com/steves460ng/quick-imposing-pub/issues/new/choose)
+- 질문·의견: [Discussions](https://github.com/steves460ng/quick-imposing-pub/discussions)
+
+아래는 사이트 관리용 안내입니다.
 
 ## 구조
 
@@ -10,6 +16,9 @@ quick-imposing의 GitHub Pages 사이트입니다.
 | `scripts/check.py` | 검사 명령 (Python 표준 라이브러리만 사용) |
 | `tests/` | 검사 스크립트 테스트 (unittest) |
 | `.github/workflows/ci.yml` | PR·main push 때 검사, main이면 `site/`를 Pages에 배포 |
+| `.github/ISSUE_TEMPLATE/` | 버그 제보·개선 요구 양식 |
+
+배포 파일(설치 파일, zip)은 저장소에 넣지 않고 Releases에 올립니다. 검사가 배포 파일을 찾으면 실패합니다.
 
 ## 검사
 

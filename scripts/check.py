@@ -11,6 +11,9 @@ HTML 검사 항목
 - <img>의 alt 속성
 - 내부 링크·자원 경로가 실제로 있는지, 같은 페이지 #앵커가 있는지
 - "/"로 시작하는 루트 절대경로 (GitHub Pages 프로젝트 사이트에서는 깨진다)
+
+저장소 검사 항목
+- 배포 파일(.exe, .msi, .zip 등)이 저장소에 없는지 (배포는 GitHub Releases로)
 """
 import io
 import sys
@@ -152,6 +155,20 @@ def _check_link(page, url, ids, site_root):
     return None
 
 
+RELEASE_EXT = {".exe", ".msi", ".msix", ".zip", ".7z", ".rar"}
+
+
+def find_release_files(root=ROOT):
+    """저장소에 들어오면 안 되는 배포 파일을 찾는다. 배포 파일은 GitHub Releases에 올린다."""
+    out = []
+    for p in Path(root).rglob("*"):
+        if ".git" in p.parts or not p.is_file():
+            continue
+        if p.suffix.lower() in RELEASE_EXT:
+            out.append((p, 0, "배포 파일은 저장소에 두지 말고 GitHub Releases에 올리세요"))
+    return out
+
+
 class _Result(unittest.TestResult):
     def __init__(self):
         super().__init__()
@@ -215,7 +232,7 @@ def select(args):
 def main(argv):
     args = [a for a in argv if a != "--ci"]
     html, tests = select(args)
-    problems = []
+    problems = find_release_files()
     for h in html:
         if not h.exists():
             problems.append((h, 0, "파일 없음"))

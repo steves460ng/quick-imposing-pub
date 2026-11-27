@@ -47,5 +47,16 @@ class CheckHtmlTest(unittest.TestCase):
         self.assertTrue(any("<div>" in m for m in msgs))
 
 
+class ReleaseFilesTest(unittest.TestCase):
+    def test_finds_installer_but_not_site_files(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "site").mkdir()
+            (root / "site" / "index.html").write_text("")
+            (root / "site" / "setup.EXE").write_bytes(b"")
+            found = [p.name for p, _, _ in check.find_release_files(root)]
+            self.assertEqual(found, ["setup.EXE"])
+
+
 if __name__ == "__main__":
     unittest.main()

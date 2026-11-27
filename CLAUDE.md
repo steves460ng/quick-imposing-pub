@@ -1,8 +1,15 @@
 # quick-imposing-pub
 
-quick-imposing(카드 PDF를 인쇄용 판 PDF에 배치하는 Windows 프로그램)의 GitHub Pages 사이트다.
+quick-imposing(카드 PDF를 인쇄용 판 PDF에 배치하는 Windows 프로그램)을 소개하고 배포하는 공개 저장소이자 GitHub Pages 사이트다.
 빌드 단계 없는 순수 HTML/CSS/JS이고, 공개되는 파일은 `site/` 아래에만 둔다.
 main에 push되면 CI가 검사를 통과한 `site/`를 Pages에 배포한다.
+
+## 이 저장소의 역할
+- 사이트 내용: 프로그램 소개, 내려받기 안내, 사용법, 패치 소식. 읽는 사람은 프로그램 사용자다.
+- **구현 관련 기술 내용은 넣지 않는다**: 소스 코드, 내부 구조, 개발 도구, 빌드 방법 등. 원본 저장소 `quick-imposing`(비공개)의 코드·문서·샘플 파일을 이리로 옮기지 않는다.
+- 배포 파일(설치 파일, zip)은 저장소에 커밋하지 않는다. 사용자가 이 저장소의 GitHub Releases에 올리고, 사이트는 `releases/latest`로 링크한다. 검사가 배포 파일을 찾으면 실패한다.
+- 패치 소식의 원본은 Releases 설명이다. 사이트에 옮길 때는 사용자 관점의 변경만 쓴다.
+- 개선 요구와 버그 제보는 Issues(`.github/ISSUE_TEMPLATE/`)로, 질문과 의견은 Discussions로 받는다.
 
 ## 세션 (권장)
 - 시작하면 `.claude/notes.md`를 먼저 읽는다. 저장소 전체 탐색은 필요할 때만 한다.

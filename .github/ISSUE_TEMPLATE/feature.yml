@@ -1,0 +1,22 @@
+name: 개선 요구
+description: 새 기능이나 바뀌었으면 하는 점
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 지금 불편한 점
+      description: 어떤 작업을 할 때 무엇이 불편한지 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: wish
+    attributes:
+      label: 바라는 동작
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 참고
+      description: 예시 파일, 다른 프로그램의 비슷한 기능 등. (공개되니 고객 자료는 올리지 마세요)
