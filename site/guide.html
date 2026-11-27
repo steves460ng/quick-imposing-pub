@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header class="site-header">
@@ -65,7 +65,11 @@
 
         <section id="template">
           <h2>1. 템플릿 만들기</h2>
-          <p>템플릿 편집기에서 합니다.</p>
+          <p>템플릿 편집기에서 합니다. 아래 표의 예는 화면 속 "명함-전면" 템플릿의 값입니다.</p>
+          <figure class="shot">
+            <img src="images/promo-editor.png" srcset="images/promo-editor.png 1x, images/promo-editor@2x.png 2x" width="1360" height="880" alt="템플릿 편집기에서 명함 템플릿의 셀 크기, 배열, 텍스트 항목을 설정하고 미리보기에서 셀 하나를 고른 화면" loading="lazy">
+            <figcaption>템플릿 편집기. 왼쪽 템플릿 목록, 가운데 판 구조 설정, 오른쪽 미리보기.</figcaption>
+          </figure>
           <ol>
             <li><strong>이름</strong>을 적습니다. 예: <code>명함-전면</code>. 저장한 뒤에는 바꿀 수 없습니다.</li>
             <li><strong>베이스 PDF 선택</strong>을 눌러 빈 베이스(작업마다 바뀌는 글자를 지운 1페이지 PDF)를 고릅니다. 베이스는 템플릿 폴더로 복사되므로 원본을 옮기거나 지워도 됩니다.
@@ -82,11 +86,11 @@
                 <tr><th scope="col">입력</th><th scope="col">뜻</th><th scope="col">예</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">셀 크기</th><td>카드 한 장이 판 위에서 차지하는 크기</td><td>85 × 50</td></tr>
-                <tr><th scope="row">시작 위치</th><td>첫 번째(왼쪽 위) 셀의 왼쪽 위 좌표</td><td>X 24, Y 49.5</td></tr>
+                <tr><th scope="row">셀 크기</th><td>카드 한 장이 판 위에서 차지하는 크기</td><td>90 × 50</td></tr>
+                <tr><th scope="row">시작 위치</th><td>첫 번째(왼쪽 위) 셀의 왼쪽 위 좌표</td><td>X 13, Y 18</td></tr>
                 <tr><th scope="row">셀 개수</th><td>가로 · 세로 칸 수</td><td>3 × 8</td></tr>
-                <tr><th scope="row">피치</th><td>셀 시작점에서 다음 셀 시작점까지의 거리. 셀 크기 + 간격</td><td>86 × 51 (간격 1mm)</td></tr>
-                <tr><th scope="row">카드 회전</th><td>카드를 돌리는 각도. 미리보기의 삼각형이 카드 위쪽 방향</td><td>−90°</td></tr>
+                <tr><th scope="row">피치</th><td>셀 시작점에서 다음 셀 시작점까지의 거리. 셀 크기 + 간격</td><td>92 × 52 (간격 2mm)</td></tr>
+                <tr><th scope="row">카드 회전</th><td>카드를 돌리는 각도. 미리보기의 삼각형이 카드 위쪽 방향</td><td>0° (그대로)</td></tr>
                 <tr><th scope="row">채움 방향</th><td>여러 파일을 한 번에 넣을 때 각 줄을 채우는 방향</td><td>정방향</td></tr>
               </tbody>
             </table>
@@ -102,6 +106,10 @@
         <section id="work">
           <h2>2. 작업하기</h2>
           <p>작업 프로그램에서 합니다.</p>
+          <figure class="shot">
+            <img src="images/promo-work.png" srcset="images/promo-work.png 1x, images/promo-work@2x.png 2x" width="1360" height="880" alt="퀵 임포징 작업 프로그램에서 명함 템플릿을 고르고 24칸 중 22칸에 명함 카드를 채운 화면" loading="lazy">
+            <figcaption>작업 프로그램. 왼쪽에서 템플릿 · 텍스트 · 데이터 · 저장 순서로 진행하고, 오른쪽에서 판을 확인합니다.</figcaption>
+          </figure>
           <ol>
             <li><strong>템플릿</strong>을 고릅니다. 판과 빈 셀(하늘색 선)이 보입니다. 템플릿이 많으면 <strong>메모 검색</strong>(Ctrl+F)으로 고객사 · 제품 이름을 찾습니다.</li>
             <li><strong>텍스트</strong>를 입력합니다. 비워 둔 칸은 PDF에 넣지 않습니다.</li>
