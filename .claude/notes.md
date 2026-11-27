@@ -4,7 +4,7 @@
 - 베이스 설명: 사용법 #base(그림·준비·셀 위치·오버베이스), 홈 "먼저 알아 둘 것: 베이스".
 - 패치 소식은 Releases가 비어 있어 "아직 공개된 버전이 없습니다"로 둠.
 - 홍보용 캡처(원본 docs/promo/의 PNG 4개, 가상 데이터)를 site/images/에 넣음. 홈 첫 화면=작업 프로그램, 사용법=편집기·작업 프로그램.
-- style.css를 크게 바꾸면 HTML의 style.css?v=N 숫자를 올린다(지금 4).
+- style.css를 크게 바꾸면 HTML의 style.css?v=N 숫자를 올린다(지금 5).
 ## 다음 할 일 (사용자)
 - Settings > Pages > Source를 "GitHub Actions"로, Discussions 켜기
 - 첫 빌드 파일을 Releases에 올리기
