@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(**/__pycache__/**)",
+      "Read(**/*.pyc)",
+      "Read(site/**/*.png)",
+      "Read(site/**/*.jpg)",
+      "Read(site/**/*.jpeg)",
+      "Read(site/**/*.gif)",
+      "Read(site/**/*.webp)",
+      "Read(site/**/*.ico)",
+      "Read(site/**/*.pdf)",
+      "Read(site/**/*.zip)",
+      "Read(site/**/*.woff)",
+      "Read(site/**/*.woff2)",
+      "Read(site/**/*.ttf)",
+      "Read(site/**/*.otf)",
+      "Read(site/**/*.mp4)",
+      "Read(site/**/*.webm)"
+    ],
+    "ask": [
+      "mcp__github__merge_pull_request"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_bash.py\""
+          }
+        ]
+      }
+    ]
+  }
+}
