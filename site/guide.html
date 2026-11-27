@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>사용법 · quick-imposing</title>
+  <meta name="description" content="quick-imposing 사용법: 템플릿 만들기, 카드 넣기, 저장, 인쇄 색상 주의사항">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="wrap" aria-label="주 메뉴">
+      <a class="brand" href="index.html">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="5" y="5" width="16" height="16"/><path d="M5 1v3M21 1v3M5 22v3M21 22v3M1 5h3M1 21h3M22 5h3M22 21h3"/><rect class="fill" x="8" y="8" width="4" height="4"/><rect class="fill" x="14" y="8" width="4" height="4"/><rect class="fill" x="8" y="14" width="4" height="4"/><rect class="fill" x="14" y="14" width="4" height="4"/></svg>
+        quick-imposing
+      </a>
+      <div class="menu">
+        <a href="index.html#features">기능</a>
+        <a href="guide.html" aria-current="page">사용법</a>
+        <a href="index.html#news">패치 소식</a>
+        <a href="index.html#feedback">의견 보내기</a>
+        <a class="menu-cta" href="https://github.com/steves460ng/quick-imposing-pub/releases/latest">내려받기</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap guide">
+    <p class="eyebrow">사용법</p>
+    <h1>처음 쓰는 분을 위한 안내</h1>
+
+    <div class="guide-layout">
+      <nav class="toc" aria-label="이 페이지의 목차">
+        <p>이 페이지에서</p>
+        <ol>
+          <li><a href="#start">시작하기</a></li>
+          <li><a href="#template">1. 템플릿 만들기</a></li>
+          <li><a href="#work">2. 작업하기</a></li>
+          <li><a href="#save">저장과 덮어쓰기</a></li>
+          <li><a href="#color">인쇄 색상 주의사항</a></li>
+          <li><a href="#update">새 버전으로 바꾸기</a></li>
+        </ol>
+      </nav>
+
+      <div class="doc">
+        <section id="start">
+          <h2>시작하기</h2>
+          <p>Windows 10 또는 11 (64비트)에서 씁니다. 따로 설치할 프로그램은 없습니다. 내려받은 zip의 압축을 풀고, 나온 <code>QuickImposing</code> 폴더를 원하는 곳에 통째로 둡니다. 폴더 안의 파일을 따로 옮기지 마세요.</p>
+          <p>프로그램은 두 개입니다. 판 구조는 편집기에서 한 번 만들고, 평소에는 작업 프로그램만 씁니다.</p>
+          <div class="programs">
+            <div>
+              <code>QuickImposingEditor.exe</code>
+              <strong>템플릿 편집기</strong>
+              <span>베이스, 셀 배열, 텍스트 자리, 메모를 템플릿으로 만듭니다. 새 사양이 생겼을 때 한 번.</span>
+            </div>
+            <div>
+              <code>QuickImposing.exe</code>
+              <strong>작업 프로그램</strong>
+              <span>템플릿을 골라 셀에 카드를 넣고 PDF를 저장합니다. 매 작업마다.</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="template">
+          <h2>1. 템플릿 만들기</h2>
+          <p>템플릿 편집기에서 합니다.</p>
+          <ol>
+            <li><strong>이름</strong>을 적습니다. 예: <code>명함-전면</code>. 저장한 뒤에는 바꿀 수 없습니다.</li>
+            <li><strong>베이스 PDF 선택</strong>을 눌러 빈 베이스(작업마다 바뀌는 글자를 지운 1페이지 PDF)를 고릅니다. 베이스는 템플릿 폴더로 복사되므로 원본을 옮기거나 지워도 됩니다.
+              <ul>
+                <li><strong>오버베이스</strong>(기본으로 켜짐): 베이스를 카드 위에 그립니다. 재단선처럼 카드에 걸친 베이스 요소가 보이고, 베이스의 흰 면도 카드를 가립니다. 끄면 카드가 베이스를 덮습니다.</li>
+              </ul>
+            </li>
+            <li>작업자에게 알려 줄 내용(용지, 재단 방향, 주의 사항 등)이 있으면 <strong>메모</strong>에 적습니다. 메모는 작업 프로그램에서 보이고, PDF에는 들어가지 않습니다.</li>
+            <li><strong>셀 배열</strong>을 입력합니다. 단위는 mm이고, 판 왼쪽 위가 (0, 0)입니다.</li>
+          </ol>
+          <div class="table-box">
+            <table>
+              <thead>
+                <tr><th scope="col">입력</th><th scope="col">뜻</th><th scope="col">예</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">셀 크기</th><td>카드 한 장이 판 위에서 차지하는 크기</td><td>85 × 50</td></tr>
+                <tr><th scope="row">시작 위치</th><td>첫 번째(왼쪽 위) 셀의 왼쪽 위 좌표</td><td>X 24, Y 49.5</td></tr>
+                <tr><th scope="row">셀 개수</th><td>가로 · 세로 칸 수</td><td>3 × 8</td></tr>
+                <tr><th scope="row">피치</th><td>셀 시작점에서 다음 셀 시작점까지의 거리. 셀 크기 + 간격</td><td>86 × 51 (간격 1mm)</td></tr>
+                <tr><th scope="row">카드 회전</th><td>카드를 돌리는 각도. 미리보기의 삼각형이 카드 위쪽 방향</td><td>−90°</td></tr>
+                <tr><th scope="row">채움 방향</th><td>여러 파일을 한 번에 넣을 때 각 줄을 채우는 방향</td><td>정방향</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ol start="5">
+            <li>판에 넣을 글자(제품명, 날짜 등)가 있으면 <strong>항목 추가</strong>로 자리를 만듭니다. 이름은 작업 화면의 입력칸 이름이 됩니다. 글자색은 K100입니다.</li>
+            <li>오른쪽 미리보기로 위치를 확인합니다. 셀을 누르면 그 셀의 좌표와 크기가 표시되므로 사양서의 수치와 대조할 수 있습니다. 셀 하나만 어긋나 있으면 그 셀을 누르고 <strong>셀 위치 보정</strong> X · Y에 옮길 거리(mm)를 넣습니다.</li>
+            <li><strong>템플릿 저장</strong>을 누릅니다.</li>
+          </ol>
+          <p>후면용은 전면 템플릿을 <strong>복제</strong>한 뒤 베이스를 후면 베이스로 바꿔 저장합니다.</p>
+        </section>
+
+        <section id="work">
+          <h2>2. 작업하기</h2>
+          <p>작업 프로그램에서 합니다.</p>
+          <ol>
+            <li><strong>템플릿</strong>을 고릅니다. 판과 빈 셀(하늘색 선)이 보입니다. 템플릿이 많으면 <strong>메모 검색</strong>(Ctrl+F)으로 고객사 · 제품 이름을 찾습니다.</li>
+            <li><strong>텍스트</strong>를 입력합니다. 비워 둔 칸은 PDF에 넣지 않습니다.</li>
+            <li><strong>데이터</strong>(카드 PDF)를 넣습니다.
+              <ul>
+                <li>셀을 누르고 <strong>데이터 불러오기</strong>를 누릅니다. 셀을 두 번 눌러도 됩니다.</li>
+                <li>탐색기에서 PDF를 셀 위로 끌어다 놓아도 됩니다.</li>
+                <li>파일을 여러 개 고르면, 선택한 셀부터 파일 이름 순서(1, 2, … 10, 11)로 차례로 채웁니다.</li>
+                <li>폴더를 미리보기에 끌어다 놓으면, 폴더 안의 PDF를 이름 순서로 이어 채웁니다.</li>
+              </ul>
+            </li>
+            <li><strong>PDF 저장</strong>을 누르고 저장 위치와 이름을 정합니다.</li>
+          </ol>
+          <p>카드 PDF는 1페이지여야 합니다. 셀보다 큰 부분은 가려지고, 작으면 남는 부분이 비어 나옵니다.</p>
+        </section>
+
+        <section id="save">
+          <h2>저장과 덮어쓰기</h2>
+          <p>저장하면 같은 폴더에 파일 4개가 생깁니다.</p>
+          <div class="table-box">
+            <table>
+              <thead>
+                <tr><th scope="col">파일</th><th scope="col">내용</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row"><code>이름.pdf</code></th><td>인쇄용 판 PDF</td></tr>
+                <tr><th scope="row"><code>이름.qiproj.json</code></th><td>프로젝트. 나중에 다시 열어 빠진 카드를 넣거나 바꿀 때 씁니다</td></tr>
+                <tr><th scope="row"><code>이름.png</code></th><td>미리보기 그림</td></tr>
+                <tr><th scope="row"><code>이름.report.json</code></th><td>처리 기록. 문제를 알릴 때 함께 보내 주세요</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>같은 이름의 파일이 있으면 <code>이름-2</code>로 저장할지, 덮어쓸지 묻습니다. 카드 PDF와 저장 위치는 같은 드라이브에 두세요.</p>
+        </section>
+
+        <section id="color">
+          <h2>인쇄 색상 주의사항</h2>
+          <div class="callout">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M11 2 1.5 19h19z"/><path d="M11 8v5M11 16v.5"/></svg>
+            <div>
+              <p><strong>CMYK 인쇄 전용입니다.</strong> 넣은 PDF의 색을 바꾸지 않고 그대로 옮깁니다.</p>
+              <ul>
+                <li>카드와 베이스는 CMYK로 만든 인쇄용 PDF를 씁니다. RGB가 섞여 있으면 인쇄 색이 달라질 수 있습니다.</li>
+                <li>회색 · 검정 글씨는 K 단색으로 만드는 것이 좋습니다.</li>
+                <li>카드에 숨겨 둔 레이어도 인쇄됩니다.</li>
+                <li>화면 미리보기는 배치 확인용입니다. 처음 쓰는 종류의 카드는 시험 인쇄로 색을 확인해 주세요.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="update">
+          <h2>새 버전으로 바꾸기</h2>
+          <ol>
+            <li>두 프로그램을 모두 닫습니다.</li>
+            <li>기존 <code>QuickImposing</code> 폴더를 지우거나 이름을 바꿔 둡니다.</li>
+            <li>새 <code>QuickImposing</code> 폴더를 같은 자리에 둡니다.</li>
+          </ol>
+          <p>만들어 둔 템플릿과 저장한 프로젝트 · PDF는 프로그램 폴더 밖에 있어 그대로 남습니다. 지금 쓰는 버전은 작업 프로그램의 <strong>도구 → 프로그램 정보</strong>에서 봅니다. 여러 PC에서 함께 쓰면 모든 PC를 같은 버전으로 맞춰 주세요.</p>
+          <p>찾는 답이 없으면 <a href="https://github.com/steves460ng/quick-imposing-pub/discussions">Discussions</a>에 물어봐 주세요.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer bordered">
+    <div class="wrap">
+      <span>quick-imposing</span>
+      <a href="https://github.com/steves460ng/quick-imposing-pub">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
