@@ -794,6 +794,28 @@ h2.h-gap {
   font-weight: 700;
 }
 
+.note-box {
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.doc .note-box p {
+  margin: 0;
+  color: var(--fg-2);
+}
+
+.doc .note-box p + p {
+  margin-top: 0.4rem;
+}
+
+.doc .note-box strong {
+  color: var(--fg);
+  font-size: 1.05rem;
+}
+
 .stack-compare {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));

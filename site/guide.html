@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <header class="site-header">
@@ -68,6 +68,10 @@
           <h2>베이스란</h2>
           <p><strong>베이스</strong>는 카드를 앉힐 <strong>판의 바탕</strong>이 되는 PDF입니다. 인쇄소에서 판을 짤 때 늘 쓰는 바탕 판(재단선, 맞춤표, 컬러바 같은 마크가 들어 있고 카드 자리는 비어 있는 판)을 PDF 한 장으로 저장한 것이라고 생각하면 됩니다.</p>
           <p>퀵 임포징은 이 베이스 위에 카드를 정해진 칸에 올려 판 PDF를 만듭니다. 그래서 <strong>결과 PDF의 크기는 베이스의 크기와 같고</strong>, 재단선이나 마크도 프로그램이 새로 그리지 않고 <strong>베이스에 있는 것을 그대로</strong> 씁니다.</p>
+          <div class="note-box">
+            <p><strong>베이스의 크기 = 실제로 인쇄할 판의 크기</strong></p>
+            <p>베이스 PDF의 페이지 크기는 인쇄기에 걸 종이(판)의 크기 그대로여야 합니다. 예를 들어 300 × 450 mm 종이에 찍는다면 베이스도 300 × 450 mm입니다. 결과 판 PDF는 이 크기 그대로 인쇄소에 넘어가고, 프로그램은 베이스나 카드를 줄이거나 늘리지 않습니다.</p>
+          </div>
 
           <figure class="base-fig">
             <div class="base-sheet" role="img" aria-label="베이스 예시. 판 가장자리에 재단선, 맞춤표, 컬러바가 있고, 가운데 카드가 들어갈 자리는 비어 있다.">
@@ -99,7 +103,7 @@
           <p>지금 쓰고 있는 판 파일(쿽, 일러스트레이터 등)에서 시작하면 됩니다.</p>
           <ol>
             <li><strong>카드와 작업마다 바뀌는 글자를 지웁니다.</strong> 카드 디자인, 날짜, 제품명, 작업팀처럼 작업할 때마다 달라지는 것은 빼고, 매번 같은 마크와 라벨만 남깁니다. 바뀌는 글자는 템플릿의 <a href="#template">텍스트 항목</a>으로 자리를 만들어 작업할 때 입력합니다.</li>
-            <li><strong>판 크기 그대로 1페이지 PDF로 저장합니다.</strong> PDF 페이지 크기가 곧 판 크기입니다(예: 300 × 450 mm).</li>
+            <li><strong>실제 인쇄할 판 크기 그대로 1페이지 PDF로 저장합니다.</strong> PDF 페이지 크기가 곧 인쇄할 종이의 크기입니다(예: 300 × 450 mm). 화면에 맞춰 줄이거나 A4 같은 다른 크기로 내보내지 않습니다. 저장한 뒤 PDF 문서 속성에서 페이지 크기가 판 크기와 같은지 확인해 주세요.</li>
             <li><strong>CMYK로 저장합니다.</strong> 카드와 마찬가지로 인쇄용 CMYK PDF여야 합니다.</li>
             <li><strong>페이지 회전을 걸지 않습니다.</strong> PDF에 페이지 회전이 설정되어 있으면 베이스로 고를 수 없습니다. 판 방향 그대로 저장합니다.</li>
             <li><strong>카드 자리는 비워 둡니다.</strong> 흰 상자나 배경색도 두지 않습니다. 베이스는 카드 위에 그려지므로(아래 "오버베이스"), 카드 자리에 무엇이 있으면 카드를 가리거나 카드 위에 찍힙니다.</li>
