@@ -292,115 +292,229 @@ h2.h-gap {
   height: auto;
 }
 
-/* 베이스 소개 (홈) */
-.base-intro {
-  border-bottom: 1px solid var(--line);
-}
-
-.base-intro-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 3rem;
-}
-
-.base-intro-lead {
-  flex: 1 1 22rem;
-  min-width: 0;
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--fg-2);
-}
-
-.base-points {
-  flex: 1 1 26rem;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  gap: 1.25rem 2rem;
-}
-
-.base-points li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding-top: 0.75rem;
-  border-top: 2px solid var(--fg);
-}
-
-.base-points span {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* 기능 */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-
-.features > div {
-  padding: 1.75rem;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.features svg {
-  stroke: var(--fg);
-}
-
-.features h3 {
-  margin: 0;
-  font-size: 1.125rem;
-}
-
-.features p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
 /* 작업 흐름 */
-.steps {
+.flow {
+  display: flex;
+  flex-direction: column;
+}
+
+.flow-lane {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.lane-label {
+  margin: 0 0 1.25rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.lane-label span {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: 0.8rem;
+}
+
+.lane-steps {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;
+  gap: 0 1rem;
 }
 
-.steps li {
-  border-top: 2px solid var(--fg);
-  padding-top: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.flow-gap {
+  align-self: center;
+  margin-top: -3.5rem;
+  color: var(--muted);
 }
 
-.step-label {
-  font-family: var(--mono);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--accent);
+.flow-arrow {
+  display: block;
+  line-height: 0;
 }
 
-.steps h3 {
-  margin: 0;
-  font-size: 1.25rem;
+.fnode h3 {
+  margin: 0.9rem 0 0.3rem;
+  font-size: 1.05rem;
 }
 
-.steps p {
+.fnode p {
   margin: 0;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+}
+
+.lane-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0.5rem 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.lane-link svg {
+  flex: none;
+}
+
+/* 흐름 그림 */
+.fig {
+  position: relative;
+  height: 9.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.msheet {
+  position: relative;
+  width: 5.6rem;
+  height: 7.6rem;
+  background: #ffffff;
+  border: 1px solid #c9c6be;
+  box-shadow: 0 8px 18px -12px rgba(22, 24, 29, 0.45);
+}
+
+.msheet .m {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #16181d;
+  border-style: solid;
+  border-width: 0;
+}
+
+.msheet .tl { left: 3px; top: 3px; border-left-width: 1px; border-top-width: 1px; }
+.msheet .tr { right: 3px; top: 3px; border-right-width: 1px; border-top-width: 1px; }
+.msheet .bl { left: 3px; bottom: 3px; border-left-width: 1px; border-bottom-width: 1px; }
+.msheet .br { right: 3px; bottom: 3px; border-right-width: 1px; border-bottom-width: 1px; }
+
+.mgrid {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 16%;
+  bottom: 12%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.mgrid i {
+  border: 1px solid #9fc3df;
+  background: #ffffff;
+}
+
+.mgrid.dashed i {
+  border-style: dashed;
+}
+
+.mtext {
+  position: absolute;
+  left: 14%;
+  top: 7%;
+  width: 40%;
+  height: 4px;
+  border: 1px dashed #9fc3df;
+}
+
+.mtext.on {
+  border: 0;
+  background: #16181d;
+}
+
+.mgrid .c1, .mcards .c1 { background: #0b6baf; border-color: #0b6baf; }
+.mgrid .c2, .mcards .c2 { background: #2bb3a6; border-color: #2bb3a6; }
+.mgrid .c3, .mcards .c3 { background: #e8743b; border-color: #e8743b; }
+.mgrid .c4 { background: #d6336c; border-color: #d6336c; }
+
+.mcards {
+  position: relative;
+  width: 6rem;
+  height: 5rem;
+}
+
+.mcards i {
+  position: absolute;
+  width: 4.4rem;
+  height: 2.6rem;
+  border-radius: 3px;
+  box-shadow: 0 6px 12px -8px rgba(22, 24, 29, 0.6);
+}
+
+.mcards .c1 { left: 0; top: 0; }
+.mcards .c2 { left: 0.8rem; top: 1.1rem; }
+.mcards .c3 { left: 1.6rem; top: 2.2rem; }
+
+.mfile {
+  position: relative;
+  width: 6rem;
+  height: 4.6rem;
+  border-radius: 4px 8px 8px 8px;
+  background: var(--fg);
+}
+
+.mfile-tab {
+  position: absolute;
+  left: 0;
+  top: -0.6rem;
+  width: 2.4rem;
+  height: 0.8rem;
+  border-radius: 4px 4px 0 0;
+  background: var(--fg);
+}
+
+.mfile-name {
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--bg);
+}
+
+.mbadge {
+  position: absolute;
+  right: calc(50% - 3.9rem);
+  bottom: 0.9rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .lane-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .flow-gap {
+    margin: 0.75rem 0;
+    justify-self: center;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .flow-lane {
+    padding: 1.1rem;
+  }
 }
 
 .after-steps {
