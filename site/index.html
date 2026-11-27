@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
   <header class="site-header">
@@ -51,23 +51,53 @@
 
     <section class="wrap section" aria-labelledby="flow-h">
       <h2 id="flow-h" class="h-gap">쓰는 순서</h2>
-      <ol class="steps">
-        <li>
-          <span class="step-label">01 · 템플릿 편집기</span>
-          <h3>판 구조를 만든다</h3>
-          <p>베이스 PDF를 고르고 카드가 들어갈 칸과 글자 자리를 정합니다. 새 사양이 생겼을 때 한 번만 하면 됩니다.</p>
-        </li>
-        <li>
-          <span class="step-label">02 · 작업 프로그램</span>
-          <h3>카드를 넣는다</h3>
-          <p>템플릿을 고르고 카드 PDF를 칸에 넣습니다. 여러 파일은 이름 순서대로 한 번에 채울 수 있습니다.</p>
-        </li>
-        <li>
-          <span class="step-label">03 · 저장</span>
-          <h3>판 PDF로 저장한다</h3>
-          <p>인쇄소에 넘길 판 PDF가 나옵니다. 프로젝트 파일도 같이 남습니다.</p>
-        </li>
-      </ol>
+      <div class="flow" role="group" aria-label="퀵 임포징 작업 흐름">
+        <div class="flow-lane">
+          <p class="lane-label"><span>처음 한 번</span> 템플릿 편집기</p>
+          <ol class="lane-steps">
+            <li class="fnode">
+              <div class="fig"><div class="msheet"><b class="m tl"></b><b class="m tr"></b><b class="m bl"></b><b class="m br"></b></div></div>
+              <h3>베이스 PDF</h3>
+              <p>재단선과 마크만 있는 판의 바탕. 인쇄할 판 크기 그대로입니다.</p>
+            </li>
+            <li class="flow-gap"><span class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 16" width="40" height="16"><path d="M2 8h32M28 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li class="fnode">
+              <div class="fig"><div class="msheet"><b class="m tl"></b><b class="m tr"></b><b class="m bl"></b><b class="m br"></b><span class="mgrid dashed"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="mtext"></span></div></div>
+              <h3>칸과 글자 자리 정하기</h3>
+              <p>셀 크기, 칸 수, 간격, 회전, 판에 넣을 글자 자리를 정합니다.</p>
+            </li>
+            <li class="flow-gap"><span class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 16" width="40" height="16"><path d="M2 8h32M28 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li class="fnode">
+              <div class="fig"><div class="mfile"><span class="mfile-tab"></span><span class="mfile-name">명함-전면</span></div></div>
+              <h3>템플릿 저장</h3>
+              <p>새 사양이 생겼을 때 한 번 만들어 두고 계속 씁니다.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="lane-link" aria-hidden="true"><svg viewBox="0 0 16 40" width="16" height="40"><path d="M8 2v32M3 28l5 6 5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>템플릿을 골라서</span></div>
+        <div class="flow-lane">
+          <p class="lane-label"><span>매 작업</span> 작업 프로그램</p>
+          <ol class="lane-steps">
+            <li class="fnode">
+              <div class="fig"><div class="mcards"><i class="c1"></i><i class="c2"></i><i class="c3"></i></div></div>
+              <h3>카드 PDF</h3>
+              <p>명함처럼 같은 크기의 카드 PDF를 여러 장 준비합니다.</p>
+            </li>
+            <li class="flow-gap"><span class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 16" width="40" height="16"><path d="M2 8h32M28 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li class="fnode">
+              <div class="fig"><div class="msheet"><b class="m tl"></b><b class="m tr"></b><b class="m bl"></b><b class="m br"></b><span class="mgrid"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i><i></i><i></i><i></i><i></i><i></i></span><span class="mtext on"></span></div></div>
+              <h3>칸에 카드 넣기</h3>
+              <p>한 칸씩 넣거나 이름 순서대로 한 번에 채웁니다. 날짜 같은 글자도 입력합니다.</p>
+            </li>
+            <li class="flow-gap"><span class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 40 16" width="40" height="16"><path d="M2 8h32M28 3l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></li>
+            <li class="fnode">
+              <div class="fig"><div class="msheet out"><b class="m tl"></b><b class="m tr"></b><b class="m bl"></b><b class="m br"></b><span class="mgrid"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i></span><span class="mtext on"></span></div><span class="mbadge">PDF</span></div>
+              <h3>판 PDF 저장</h3>
+              <p>인쇄소에 넘길 판 PDF가 나옵니다. 다시 열어 고칠 수 있게 프로젝트 파일도 같이 남습니다.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
       <p class="after-steps"><a class="text-link" href="guide.html">자세한 사용법 보기 →</a></p>
     </section>
 
