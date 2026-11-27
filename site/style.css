@@ -221,7 +221,8 @@ h2.h-gap {
 }
 
 .hero-text {
-  flex: 1 1 26rem;
+  flex: 1 1 100%;
+  max-width: 44rem;
   min-width: 0;
 }
 
@@ -259,105 +260,36 @@ h2.h-gap {
   color: var(--muted);
 }
 
-/* 판 그림 */
-.sheet-figure {
-  flex: 1 1 26rem;
+/* 대표 화면 */
+.hero-shot {
+  flex: 1 1 100%;
   min-width: 0;
   margin: 0;
+}
+
+.window {
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 24px 48px -32px rgba(22, 24, 29, 0.5);
+}
+
+.window-bar {
+  height: 2rem;
+  padding: 0 0.75rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.9rem;
-}
-
-.sheet-frame {
-  position: relative;
-  width: 100%;
-  max-width: 30rem;
-  padding: 28px;
-}
-
-.crop {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-}
-
-.crop::before,
-.crop::after {
-  content: "";
-  position: absolute;
-  background: var(--fg);
-}
-
-.crop::before {
-  width: 18px;
-  height: 1px;
-  top: 14px;
-}
-
-.crop::after {
-  width: 1px;
-  height: 18px;
-  left: 14px;
-}
-
-.crop.tl { left: 0; top: 0; }
-.crop.tr { right: 0; top: 0; transform: scaleX(-1); }
-.crop.bl { left: 0; bottom: 0; transform: scaleY(-1); }
-.crop.br { right: 0; bottom: 0; transform: scale(-1, -1); }
-
-.sheet {
-  background: #ffffff;
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 40px -24px rgba(22, 24, 29, 0.35);
-  padding: 22px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.slot {
-  aspect-ratio: 9 / 5;
-  padding: 10%;
-  background: #fbfaf7;
-  border: 1px solid #c9c6be;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.slot::before {
-  content: "";
-  width: 38%;
-  height: 6px;
-  background: var(--accent);
-}
-
-.slot::after {
-  content: "";
-  width: 70%;
-  height: 4px;
-  background: #c9c6be;
-  box-shadow: 0 8px 0 -0px #dcd9d1;
-  margin-bottom: 8px;
-}
-
-.slot.empty {
-  background: transparent;
-  border-style: dashed;
-  border-color: #a9a59b;
-}
-
-.slot.empty::before,
-.slot.empty::after {
-  visibility: hidden;
-}
-
-.sheet-figure figcaption {
-  font-family: var(--mono);
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
   font-size: 0.75rem;
   color: var(--muted);
+}
+
+.window img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* 기능 */
@@ -680,6 +612,26 @@ h2.h-gap {
 .programs span {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.shot {
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-2);
+  border-radius: 6px;
+}
+
+.shot figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .table-box {
