@@ -1,0 +1,11 @@
+# 템플릿 전용 파일 목록
+# groundwork 스킬이 새 저장소를 세팅할 때 이 목록을 보고 정리한다.
+# 형식: <동작> <경로>
+#   delete  : 세팅이 끝나면 삭제
+#   replace : 새 프로젝트용 내용으로 다시 작성
+
+delete .template/
+delete .github/workflows/skill-check.yml
+delete README.ko.md
+replace README.md
+replace CLAUDE.md
