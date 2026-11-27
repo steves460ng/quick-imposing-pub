@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light dark;
+  --fg: #1d1d1f;
+  --muted: #5f6368;
+  --bg: #ffffff;
+  --panel: #f4f5f7;
+  --accent: #0b63ce;
+  --accent-fg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #f2f2f2;
+    --muted: #a8adb3;
+    --bg: #161618;
+    --panel: #222226;
+    --accent: #4c9bff;
+    --accent-fg: #0b0b0c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  line-height: 1.6;
+  word-break: keep-all;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+}
+
+.hero,
+main,
+footer {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.lead {
+  margin: 0 auto 2rem;
+  max-width: 32rem;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus-visible {
+  filter: brightness(1.1);
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.features > div {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--panel);
+}
+
+.features h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.features p {
+  margin: 0;
+  color: var(--muted);
+}
+
+#feedback h2 {
+  font-size: 1.15rem;
+}
+
+footer {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}

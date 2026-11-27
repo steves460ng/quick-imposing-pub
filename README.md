@@ -1,65 +1,44 @@
-# groundwork
+# quick-imposing-pub
 
-**English** | [한국어](README.ko.md)
+명함 같은 카드 PDF를 인쇄용 판 PDF의 정해진 칸에 배치하는 Windows 프로그램 **quick-imposing**의 소개·배포 저장소입니다.
 
-A Claude Code skill that sets up a project baseline (CI, a check command, and working rules) for a new repository in one go, packaged as a GitHub template repository.
+- 내려받기: [최신판](https://github.com/steves460ng/quick-imposing-pub/releases/latest) · [지난 버전과 패치 소식](https://github.com/steves460ng/quick-imposing-pub/releases)
+- 버그 제보·개선 요구: [Issues](https://github.com/steves460ng/quick-imposing-pub/issues/new/choose)
+- 질문·의견: [Discussions](https://github.com/steves460ng/quick-imposing-pub/discussions)
 
-## Why
+아래는 사이트 관리용 안내입니다.
 
-When you build alone, basics like CI, consistent checks, and working rules tend to get pushed to "later" and never happen. groundwork puts them in place on day one.
+## 구조
 
-**Main benefit: solid project basics**
-- CI runs the same checks on every push and PR, so regressions get caught
-- A single check command runs format, lint, type, and test checks
-- You can merge refactors and Claude-made changes with confidence
-
-**Side benefit: a structure where Claude Code wastes less effort**
-- Check output is short, and CI results come back as failures only
-- Full test runs are left to CI; Claude runs only the related tests
-- Files that never need reading are blocked by permissions, and formatting is handled by hooks
-- A notes file carries context across sessions in a few lines
-
-This can also cut token usage. How much depends on the project and your habits, so treat it as a bonus.
-
-Setup itself takes time and tokens, so groundwork suits **long-lived projects**. It isn't recommended for throwaway repositories you'll use for a few days.
-
-## What it does
-
-Run `/groundwork` and Claude asks you questions one at a time: seven at most, each with a recommended default. When you're done, it creates the files below, verifies that the checks and hooks work, and opens a PR.
-
-| Output | Purpose |
+| 경로 | 내용 |
 |---|---|
-| Quiet check command | Format → lint → types → tests. Prints one line on success; on failure, only `file:line` and the error. Pass a path to run only related tests |
-| CI result check | Uses whatever actually works in your environment (GitHub MCP tools or a `ci-status` command) to fetch only the failing part. No more pasting logs |
-| `.claude/settings.json` + hooks | Blocks reading lock files and build output, blocks running test runners directly, auto-formats after edits |
-| `.claude/notes.md` | Work notes, 20 lines max. Skipped if the repository already has a handoff document such as HANDOFF |
-| `CLAUDE.md` | 60 lines max. Use only the check command, check CI results after pushing, work on a branch and merge PRs only with your approval, read the handoff notes first (recommended), and so on |
-| `CONTEXT.md` + generator script | Optional, for larger projects. Holds only what a script can extract reliably: structure, entry points, exported names |
-| `ci.yml` | Full checks run in CI. Docs-only changes are skipped |
+| `site/` | 공개되는 사이트 파일 (순수 HTML/CSS/JS, 빌드 없음) |
+| `scripts/check.py` | 검사 명령 (Python 표준 라이브러리만 사용) |
+| `tests/` | 검사 스크립트 테스트 (unittest) |
+| `.github/workflows/ci.yml` | PR·main push 때 검사, main이면 `site/`를 Pages에 배포 |
+| `.github/ISSUE_TEMPLATE/` | 버그 제보·개선 요구 양식 |
 
-It never adds tools or dependencies you weren't asked about. Run it again on an already set-up repository and it asks only about what changed, showing a diff before touching existing files.
+배포 파일(설치 파일, zip)은 저장소에 넣지 않고 Releases에 올립니다. 검사가 배포 파일을 찾으면 실패합니다.
 
-It also works on repositories that already have code. In that case it first reviews each output as "add as is / add with changes / skip" and builds only what you pick. Existing handoff docs, test commands, and formatting policies take priority.
+## 검사
 
-## Usage
+```sh
+python scripts/check.py              # 전체
+python scripts/check.py site/a.html  # 해당 경로만
+```
 
-1. On this repository's page, click **Use this template → Create a new repository**.
-2. Open a Claude Code on the web session for the new repository. If you make a change request before setup, Claude suggests running `/groundwork` first.
-3. Run `/groundwork` and answer the questions.
-4. Review and merge the PR Claude opens.
+성공하면 한 줄, 실패하면 `파일:행: 문제`만 출력합니다.
 
-After setup, the template-only files (`.template/`, `.github/workflows/skill-check.yml`, `README.ko.md`) are removed and this README and `CLAUDE.md` are rewritten for the new project. `.claude/skills/groundwork/` stays so you can run it again later.
+## 로컬 미리보기
 
-> The skill instructions are written in Korean, but Claude replies in the language you use. If it doesn't, just ask it to use English.
+```sh
+python -m http.server -d site 8000
+```
 
-## Contents
+## 배포
 
-| Path | Purpose |
-|---|---|
-| `.claude/skills/groundwork/SKILL.md` | The skill itself |
-| `.claude/skills/auto-test/`, `.claude/commands/generate-tests.md`, `.claude/agents/test-writer.md` | Test generation tools. Suggests tests for code that has none, and `/generate-tests <path>` writes test files. New tests are run with the quiet check command. Adapted from [test-generator](https://github.com/a-abdellatif98/test-generator) (MIT) without its hook. The interview asks whether to keep them as a command only (recommended), with auto suggestions, or not at all |
-| `.claude/THIRD_PARTY_NOTICES.md` | Source and license of the imported files |
-| `CLAUDE.md` | Temporary rules for repositories created from the template: suggests running `/groundwork` once before the first change, and keeps work on branches with merges only on your approval. Replaced during setup |
-| `.template/MANIFEST` | Template-only files to clean up in new repositories |
-| `.template/check.py` | Skill format checker (Python standard library only) |
-| `.github/workflows/skill-check.yml` | CI that checks the skill when it changes. Runs only in this origin repository |
+저장소 설정 > Pages > Source를 **GitHub Actions**로 한 번 설정하면, main에 합쳐질 때마다 자동 배포됩니다.
+
+## 라이선스
+
+[LICENSE](LICENSE)

@@ -1,0 +1,64 @@
+name: ci
+
+on:
+  pull_request:
+    paths-ignore: ["**/*.md", "docs/**"]
+  push:
+    branches: [main]
+    paths-ignore: ["**/*.md", "docs/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # 의존성이 없어 캐시는 쓰지 않는다 (표준 라이브러리만 사용).
+      - name: Check
+        run: |
+          set -o pipefail
+          python scripts/check.py --ci 2>&1 | tee check.log
+      - name: Summary on failure
+        if: failure()
+        run: |
+          {
+            echo '### 검사 실패'
+            echo '```'
+            tail -n 40 check.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    # main push(또는 main에서 수동 실행) 때만, 검사를 통과한 site/를 Pages에 배포한다.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

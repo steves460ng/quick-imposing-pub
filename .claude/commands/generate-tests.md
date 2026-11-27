@@ -1,7 +1,7 @@
 ---
 description: Generate test files for source files that lack test coverage
 argument-hint: [file-or-directory-path]
-allowed-tools: [Read, Glob, Grep, Write(spec/**), Write(test/**), Write(tests/**), Write(__tests__/**), Write(**/*_spec.rb), Write(**/*_test.*), Write(**/test_*.py), Write(**/*.test.*), Write(**/*.spec.*), Write(**/*Test.php)]
+allowed-tools: [Read, Glob, Grep, Write(spec/**), Write(test/**), Write(tests/**), Write(__tests__/**), Write(**/*_spec.rb), Write(**/*_test.*), Write(**/test_*.py), Write(**/*.test.*), Write(**/*.spec.*), Write(**/*Test.php), Bash(python scripts/check.py:*)]
 ---
 
 # Generate Tests
@@ -96,7 +96,7 @@ Write each test file after showing it. Ask the user before writing if there are 
 
 ### Step 7: Run the new tests
 
-Check command: `none`
+Check command: `python scripts/check.py`
 
 (groundwork replaces `none` above with this project's quiet check command during setup.)
 
