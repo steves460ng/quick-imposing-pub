@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <header class="site-header">
@@ -30,9 +30,9 @@
   <main>
     <section class="wrap hero" aria-labelledby="hero-h">
       <div class="hero-text">
-        <p class="eyebrow">WINDOWS 10 · 11 / CMYK 인쇄용</p>
+        <p class="eyebrow">Windows 10, 11 · CMYK 인쇄용</p>
         <h1 id="hero-h">카드 PDF를<br>판에 바로 앉힙니다</h1>
-        <p class="lead">명함 같은 카드 PDF를 인쇄용 판 PDF의 정해진 칸에 배치하는 프로그램입니다. 판 구조는 템플릿으로 한 번만 만들고, 작업할 때는 고르고 넣고 저장하면 끝납니다.</p>
+        <p class="lead">명함 같은 카드 PDF를 인쇄용 판 PDF의 정해진 칸에 배치하는 프로그램입니다. 판 구조를 템플릿으로 한 번 만들어 두면, 작업할 때는 템플릿을 골라 카드를 넣고 저장하면 됩니다.</p>
         <div class="hero-actions">
           <a class="button" href="https://github.com/steves460ng/quick-imposing-pub/releases/latest">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v10M4.5 7.5 9 12l4.5-4.5M3 16h12"/></svg>
@@ -52,13 +52,12 @@
 
     <section id="features" class="band" aria-labelledby="features-h">
       <div class="wrap section">
-        <h2 id="features-h">무엇을 해 주나요</h2>
-        <p class="section-lead">카드와 베이스의 내용은 그대로 두고, 회전과 위치만 맞춥니다.</p>
+        <h2 id="features-h" class="h-gap">주요 기능</h2>
         <div class="features">
           <div>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="20" height="20"/><path d="M9 14l3 3 7-7"/></svg>
             <h3>원본을 건드리지 않습니다</h3>
-            <p>색, 레이어, 글꼴을 그대로 옮겨 놓습니다. 크기는 바꾸지 않습니다.</p>
+            <p>카드와 베이스의 색, 레이어, 글꼴을 그대로 옮깁니다. 크기는 바꾸지 않고 회전과 위치만 맞춥니다.</p>
           </div>
           <div>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="20" height="20"/><path d="M4 11h20M4 18h20M14 4v20"/></svg>
@@ -68,48 +67,48 @@
           <div>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M6 4h11l5 5v15H6z"/><path d="M17 4v5h5M10 15h8M10 19h5"/></svg>
             <h3>넣는 방법이 여러 가지</h3>
-            <p>하나씩 넣기, 이름 순서로 한 번에 채우기, 끌어다 놓기, 복사·연속 붙여넣기.</p>
+            <p>한 칸씩 넣어도 되고, 여러 파일을 이름 순서대로 한 번에 채우거나 탐색기에서 끌어다 놓아도 됩니다. 복사해서 여러 칸에 이어 붙일 수도 있습니다.</p>
           </div>
           <div>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke-width="1.6" aria-hidden="true"><path d="M5 14a9 9 0 1 0 3-6.7"/><path d="M5 4v5h5"/></svg>
             <h3>다시 열어 고칠 수 있습니다</h3>
-            <p>저장할 때 프로젝트 파일이 함께 남아, 빠진 카드를 넣고 다시 저장합니다.</p>
+            <p>저장할 때 프로젝트 파일이 같이 남습니다. 나중에 열어서 빠진 카드를 넣고 다시 저장하면 됩니다.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="wrap section base-intro" aria-labelledby="base-h">
-      <h2 id="base-h" class="h-gap">먼저 알아 둘 것: 베이스</h2>
+      <h2 id="base-h" class="h-gap">베이스부터 알아 두세요</h2>
       <div class="base-intro-grid">
-        <p class="base-intro-lead"><strong>베이스</strong>는 카드를 앉힐 판의 바탕 PDF입니다. 재단선, 맞춤표, 컬러바처럼 매번 같은 것만 들어 있고, 카드 자리는 비어 있습니다. 퀵 임포징은 이 베이스 위에 카드를 칸마다 올려 판 PDF를 만듭니다.</p>
+        <p class="base-intro-lead"><strong>베이스</strong>는 카드를 올려놓을 판의 바탕이 되는 PDF입니다. 재단선, 맞춤표, 컬러바처럼 판마다 똑같이 들어가는 것만 있고 카드 자리는 비어 있습니다. 퀵 임포징은 이 베이스의 정해진 칸에 카드를 올려 판 PDF를 만듭니다.</p>
         <ul class="base-points">
-          <li><strong>베이스 크기 = 실제 인쇄할 판 크기</strong><span>인쇄기에 걸 종이 크기 그대로 1페이지 CMYK PDF로 준비합니다. 결과 판 PDF도 이 크기로 나옵니다.</span></li>
-          <li><strong>마크는 베이스에 있는 그대로</strong><span>재단선이나 마크를 프로그램이 새로 그리지 않습니다.</span></li>
-          <li><strong>바뀌는 글자는 지워 둡니다</strong><span>날짜 · 제품명은 템플릿의 텍스트 항목으로 작업할 때 넣습니다.</span></li>
-          <li><strong>앞면 · 뒷면은 따로</strong><span>면마다 베이스와 템플릿을 하나씩 만듭니다.</span></li>
+          <li><strong>베이스 크기가 곧 판 크기</strong><span>인쇄할 판 크기 그대로 만듭니다. 결과 PDF도 같은 크기로 나옵니다.</span></li>
+          <li><strong>마크는 베이스에 넣어 둡니다</strong><span>재단선이나 마크를 프로그램이 따로 그려 주지 않습니다.</span></li>
+          <li><strong>바뀌는 글자는 지워 둡니다</strong><span>날짜나 제품명은 작업할 때 텍스트 항목으로 넣습니다.</span></li>
+          <li><strong>앞면과 뒷면은 따로</strong><span>면마다 베이스와 템플릿을 하나씩 만듭니다.</span></li>
         </ul>
       </div>
       <p class="after-steps"><a class="text-link" href="guide.html#base">베이스 준비하는 법 자세히 보기 →</a></p>
     </section>
 
     <section class="wrap section" aria-labelledby="flow-h">
-      <h2 id="flow-h" class="h-gap">세 단계면 판이 나옵니다</h2>
+      <h2 id="flow-h" class="h-gap">쓰는 순서</h2>
       <ol class="steps">
         <li>
           <span class="step-label">01 · 템플릿 편집기</span>
           <h3>판 구조를 만든다</h3>
-          <p>판의 바탕인 베이스 PDF를 고르고, 카드가 들어갈 칸과 글자 자리를 정합니다. 새 사양이 생겼을 때 한 번만 하면 됩니다.</p>
+          <p>베이스 PDF를 고르고 카드가 들어갈 칸과 글자 자리를 정합니다. 새 사양이 생겼을 때 한 번만 하면 됩니다.</p>
         </li>
         <li>
           <span class="step-label">02 · 작업 프로그램</span>
           <h3>카드를 넣는다</h3>
-          <p>템플릿을 고르고, 카드 PDF를 칸에 넣습니다. 여러 파일은 이름 순서로 한 번에 채웁니다.</p>
+          <p>템플릿을 고르고 카드 PDF를 칸에 넣습니다. 여러 파일은 이름 순서대로 한 번에 채울 수 있습니다.</p>
         </li>
         <li>
           <span class="step-label">03 · 저장</span>
           <h3>판 PDF로 저장한다</h3>
-          <p>인쇄소에 넘길 판 PDF가 나옵니다. 프로젝트 파일도 함께 남습니다.</p>
+          <p>인쇄소에 넘길 판 PDF가 나옵니다. 프로젝트 파일도 같이 남습니다.</p>
         </li>
       </ol>
       <p class="after-steps"><a class="text-link" href="guide.html">자세한 사용법 보기 →</a></p>
@@ -145,11 +144,11 @@
         <div class="feedback">
           <a href="https://github.com/steves460ng/quick-imposing-pub/issues/new/choose">
             <strong>버그 제보 · 개선 요구 →</strong>
-            <span>결과가 이상하거나 있었으면 하는 기능이 있으면 이슈로 남겨 주세요. 양식이 준비되어 있습니다.</span>
+            <span>결과가 이상하거나 필요한 기능이 있으면 이슈로 남겨 주세요. 양식에 맞춰 쓰면 됩니다.</span>
           </a>
           <a href="https://github.com/steves460ng/quick-imposing-pub/discussions">
             <strong>질문 · 의견 →</strong>
-            <span>쓰는 법이 궁금하거나 나누고 싶은 이야기는 Discussions에서 받습니다.</span>
+            <span>쓰는 법이 궁금하거나 하고 싶은 이야기가 있으면 Discussions에 남겨 주세요.</span>
           </a>
         </div>
       </div>
